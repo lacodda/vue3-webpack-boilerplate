@@ -33,7 +33,6 @@
   },
   "dependencies": {
     "vue": "^3.3.4",
-    "vue-facing-decorator": "^2.1.20",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
