@@ -6,13 +6,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-facing-decorator';
-
-@Component
-export default class About extends Vue {}
-</script>
-
 <style scoped lang="scss">
 .about {
   &__container {
@@ -26,6 +19,7 @@ export default class About extends Vue {}
   &__title {
     display: flex;
     h1 {
+      font-size: 2.6rem;
       width: max-content;
       text-transform: uppercase;
       background: var(--teal);

@@ -1,32 +1,33 @@
 <template>
   <div class="home__container">
     <div class="home__title">
-      <img :src="require('../images/logo.svg')" width="100" />
-      <h1>Vue.js Boilerplate</h1>
+      <img :src="require('images/logo.svg')" width="100" />
+      <h1>Vue 3 Boilerplate</h1>
     </div>
     <div class="home__counter">
-      <button class="btn" @click="inc">+</button>
-      <button class="btn" @click="desc">−</button>
+      <button-el size="l" @click="inc">+</button-el>
+      <button-el size="l" @click="dec">−</button-el>
       <div class="home__count">{{count}}</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-facing-decorator';
+import { Ref, ref } from 'vue';
 
-@Component
-export default class Home extends Vue {
-  count: number = 0;
+export default {
+  setup () {
+    const count: Ref<number> = ref(0);
 
-  inc (): void {
-    this.count++;
-  }
-
-  desc (): void {
-    this.count--;
-  }
-}
+    function inc (): void {
+      count.value++;
+    }
+    function dec (): void {
+      count.value--;
+    }
+    return { count, inc, dec };
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -42,6 +43,7 @@ export default class Home extends Vue {
   &__title {
     display: flex;
     h1 {
+      font-size: 2.6rem;
       width: max-content;
       text-transform: uppercase;
       background: var(--teal);
