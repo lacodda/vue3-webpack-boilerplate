@@ -42,6 +42,7 @@ export default {
   }
   &__title {
     display: flex;
+    column-gap: 1rem;
     h1 {
       font-size: var(--font-size-h1);
       width: max-content;
